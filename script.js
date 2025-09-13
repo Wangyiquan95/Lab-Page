@@ -306,6 +306,47 @@ document.addEventListener('DOMContentLoaded', () => {
         research: !!researchSection,
         contact: !!contactSection
     });
+    
+    // Mobile-specific fix for Explore Research button
+    const exploreBtn = document.querySelector('.hero-buttons .btn');
+    if (exploreBtn) {
+        exploreBtn.addEventListener('touchstart', function(e) {
+            // Prevent default touch behavior
+            e.preventDefault();
+            
+            // Add visual feedback
+            this.style.transform = 'scale(0.95)';
+            this.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                this.style.transform = '';
+                this.style.opacity = '';
+            }, 150);
+            
+            // Scroll to research section
+            const target = document.querySelector('#research');
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }, { passive: false });
+        
+        // Also handle regular click for desktop
+        exploreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector('#research');
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 });
 
 // Add keyboard support for research cards
