@@ -13,17 +13,47 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
+// Simple smooth scrolling function (global)
+window.smoothScrollTo = function(targetId) {
+    console.log('Attempting to scroll to:', targetId);
+    const target = document.querySelector(targetId);
+    console.log('Target element found:', !!target);
+    
+    if (target) {
+        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+        console.log('Scrolling to position:', offsetTop);
+        
+        // Try smooth scrolling first
+        if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        } else {
+            // Fallback for older browsers
+            window.scrollTo(0, offsetTop);
+        }
+    } else {
+        console.error('Target element not found:', targetId);
+    }
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        const targetId = this.getAttribute('href');
+        
+        console.log('Anchor clicked:', targetId);
+        
+        // Close mobile menu if open
+        if (hamburger && navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         }
+        
+        // Scroll to target
+        smoothScrollTo(targetId);
     });
 });
 
@@ -236,3 +266,58 @@ const debouncedScrollHandler = debounce(() => {
 }, 10);
 
 window.addEventListener('scroll', debouncedScrollHandler);
+
+// Navigation function for research direction pages
+function navigateToPage(pageName) {
+    // Add a smooth transition effect
+    document.body.style.opacity = '0.8';
+    document.body.style.transform = 'scale(0.98)';
+    
+    setTimeout(() => {
+        window.location.href = pageName;
+    }, 200);
+}
+
+// Add click tracking for research direction navigation
+document.querySelectorAll('.research-card, .ai-category').forEach(card => {
+    card.addEventListener('click', (e) => {
+        // Prevent default link behavior if it's a card click
+        if (e.target.closest('.learn-more')) {
+            return; // Let the link handle the navigation
+        }
+        
+        const link = card.querySelector('.learn-more');
+        if (link) {
+            e.preventDefault();
+            trackClick(card, 'research_direction_click');
+            navigateToPage(link.getAttribute('href'));
+        }
+    });
+});
+
+// Debug: Log when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Page loaded, smooth scrolling initialized');
+    
+    // Test if sections exist
+    const researchSection = document.querySelector('#research');
+    const contactSection = document.querySelector('#contact');
+    console.log('Sections found:', {
+        research: !!researchSection,
+        contact: !!contactSection
+    });
+});
+
+// Add keyboard support for research cards
+document.querySelectorAll('.research-card, .ai-category').forEach(card => {
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', 'Click to learn more about this research direction');
+    
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+        }
+    });
+});
