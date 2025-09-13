@@ -1,0 +1,128 @@
+# GitHub Pages Configuration for Wang Lab
+
+# Site settings
+title: "Wang Lab - Virus-Immune System Coevolution"
+description: "Bridging experimental biology with artificial intelligence to understand virus-immune system coevolution"
+url: "https://yourusername.github.io"
+baseurl: "/wanglab.github.io"  # Change this to your repository name
+author: "Wang Lab"
+email: "contact@wanglab.org"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:name/
+  team:
+    output: true
+    permalink: /:collection/:name/
+  news:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+  - scope:
+      path: ""
+      type: "team"
+    values:
+      layout: "team_member"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "news_item"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include in site
+include:
+  - _redirects
+
+# Social links
+social:
+  name: Wang Lab
+  links:
+    - https://github.com/wanglab
+    - https://twitter.com/wanglab
+    - https://linkedin.com/company/wanglab
+
+# SEO
+seo:
+  type: "Organization"
+  name: "Wang Lab"
+  description: "Virus-Immune System Coevolution Research Lab"
+  url: "https://yourusername.github.io/wanglab.github.io"
+  image: "/assets/images/lab-logo.png"
+  twitter:
+    card: "summary_large_image"
+    username: "wanglab"
+  facebook:
+    app_id: "your-facebook-app-id"
+    publisher: "https://facebook.com/wanglab"
+  google:
+    verification: "your-google-verification-code"
+
+# Analytics
+google_analytics: "your-google-analytics-id"
+
+# Comments
+disqus:
+  shortname: "wanglab"
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Timezone
+timezone: "America/New_York"
+
+# Encoding
+encoding: "utf-8"
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
