@@ -26,6 +26,9 @@
                     <a href="#team" class="nav-link">Team</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
                     <a href="#publications" class="nav-link">Publications</a>
                 </li>
                 <li class="nav-item">
@@ -49,8 +52,7 @@
                 <p class="hero-description">
                     Bridging experimental biology with artificial intelligence to understand and predict 
                     the dynamic coevolution between viruses and immune systems. Our lab pioneers 
-                    high-throughput methods, AI-driven research, and adaptive feedback loops to 
-                    tackle emerging viral threats.
+                    high-throughput methods and AI-driven research to advance our understanding of viral evolution and therapeutic design.
                 </p>
                 <div class="hero-buttons">
                     <a href="#research" class="btn btn-primary">Explore Research</a>
@@ -120,50 +122,55 @@
             <div class="research-grid">
                 <!-- High-throughput Methods -->
                 <div class="research-card" onclick="navigateToPage('high-throughput.html')">
-                    <div class="card-icon">
-                        <i class="fas fa-dna"></i>
+                    <div class="research-content">
+                        <div class="card-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <h3>High-Throughput Methods & Robotic Automation</h3>
+                        <p>Developing cutting-edge experimental platforms for rapid discovery and characterization.</p>
+                        <ul class="research-list">
+                            <li>mRNA Display Technology</li>
+                            <li>Yeast Display Systems</li>
+                            <li>Deep Mutational Scanning (DMS)</li>
+                            <li>Automated Laboratory Workflows</li>
+                        </ul>
+                        <a href="high-throughput.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3>High-Throughput Methods & Robotic Automation</h3>
-                    <p>Developing cutting-edge experimental platforms for rapid discovery and characterization.</p>
-                    <ul class="research-list">
-                        <li><i class="fas fa-check"></i> mRNA Display Technology</li>
-                        <li><i class="fas fa-check"></i> Yeast Display Systems</li>
-                        <li><i class="fas fa-check"></i> Deep Mutational Scanning (DMS)</li>
-                        <li><i class="fas fa-check"></i> Automated Laboratory Workflows</li>
-                    </ul>
-                    <a href="high-throughput.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <!-- AI for Science -->
                 <div class="research-card" onclick="navigateToPage('ai-science.html')">
-                    <div class="card-icon">
-                        <i class="fas fa-microscope"></i>
+                    <div class="research-content">
+                        <div class="card-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>AI Agents and Tools</h3>
+                        <p>Revolutionizing scientific research through artificial intelligence and machine learning.</p>
+                        <ul class="research-list">
+                            <li>AI Researcher (automated literature review & paper writing)</li>
+                            <li>AI Bioinformatics (data cleaning, analysis & interpretation)</li>
+                            <li>AI Reproduction (GitHub-mode study reproduction)</li>
+                        </ul>
+                        <a href="ai-science.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3>AI for Science</h3>
-                    <p>Revolutionizing scientific research through artificial intelligence and machine learning.</p>
-                    <ul class="research-list">
-                        <li><i class="fas fa-check"></i> AI Researcher (automated literature review & paper writing)</li>
-                        <li><i class="fas fa-check"></i> AI Bioinformatics (data cleaning, analysis & interpretation)</li>
-                        <li><i class="fas fa-check"></i> AI Reproduction (GitHub-mode study reproduction)</li>
-                    </ul>
-                    <a href="ai-science.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Lab-Feedback AI Loop -->
+                <!-- Lab-Feedback AI modeling -->
                 <div class="research-card" onclick="navigateToPage('lab-feedback.html')">
-                    <div class="card-icon">
-                        <i class="fas fa-atom"></i>
+                    <div class="research-content">
+                        <div class="card-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>Lab-Feedback AI Modeling</h3>
+                        <p>Creating adaptive systems that continuously improve predictions.</p>
+                        <ul class="research-list">
+                            <li>Foundation Model for Predicting Influenza Antigenic Evolution</li>
+                            <li>Generative Model for Antibody Design</li>
+                            <li>Multimodal Language Model for Antibody–Antigen Interaction</li>
+                            <li>Continuous Model Refinement via Lab-Feedback</li>
+                        </ul>
+                        <a href="lab-feedback.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3>Lab-Feedback AI Loop</h3>
-                    <p>Creating adaptive systems that continuously improve predictions and respond to emerging threats.</p>
-                    <ul class="research-list">
-                        <li><i class="fas fa-check"></i> Real-time Prediction Updates</li>
-                        <li><i class="fas fa-check"></i> Adaptive Learning Systems</li>
-                        <li><i class="fas fa-check"></i> Threat Response Automation</li>
-                        <li><i class="fas fa-check"></i> AI Modeling (virus evolution & antibody foundation models)</li>
-                        <li><i class="fas fa-check"></i> Continuous Model Refinement</li>
-                    </ul>
-                    <a href="lab-feedback.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -207,11 +214,11 @@
             </div>
             <div class="team-placeholder">
                 <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fas fa-user"></i>
+                    <div class="team-avatar photo">
+                        <img src="images/yiquan2023.JPEG" alt="Yiquan Wang" />
                     </div>
                     <h3>Principal Investigator</h3>
-                    <p>Dr. [Name] Wang</p>
+                    <p>Dr. Yiquan Wang</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
@@ -224,6 +231,60 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <p>Representative artwork and visuals from our research</p>
+            </div>
+            <div class="gallery-grid">
+                <figure class="gallery-item">
+                    <img src="images/art1.jpg" alt="Micro-pianists exploring ivory keys" class="gallery-img" loading="lazy">
+                    <figcaption>
+                        <h3 class="gallery-title">Micro-Pianists</h3>
+                        <p class="gallery-desc">A surreal scene of tiny explorers marching across piano keys, evoking rhythm in biology and harmony in discovery.</p>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/art2.jpg" alt="Bacteriophage standing on martian-like terrain" class="gallery-img" loading="lazy">
+                    <figcaption>
+                        <h3 class="gallery-title">Phage Sentinel</h3>
+                        <p class="gallery-desc">An iconic bacteriophage rendered as a vigilant sentinel, symbolizing precision in viral targeting and therapeutic design.</p>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/art3.jpg" alt="Viruses illuminated in a cavern" class="gallery-img" loading="lazy">
+                    <figcaption>
+                        <h3 class="gallery-title">Cavern of Virions</h3>
+                        <p class="gallery-desc">Light breaks into a dark cavern of virions, capturing the moment of insight when data reveals hidden biological structure.</p>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/art4.jpg" alt="Starry Night rendered with molecular motifs" class="gallery-img" loading="lazy">
+                    <figcaption>
+                        <h3 class="gallery-title">Molecular Night</h3>
+                        <p class="gallery-desc">A tribute to Starry Night, reimagined with molecular textures—where patterns echo stochastic dynamics in evolution.</p>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/art5.jpg" alt="Vaccination bottle with mRNA and lab tools" class="gallery-img" loading="lazy">
+                    <figcaption>
+                        <h3 class="gallery-title">Vaccination</h3>
+                        <p class="gallery-desc">mRNA technology encapsulated—capturing the interplay between experimental innovation and AI-guided design.</p>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/art6.jpg" alt="Reshaping Antibody sculpture by a cartoon SARS-CoV-2" class="gallery-img" loading="lazy">
+                    <figcaption>
+                        <h3 class="gallery-title">Reshaping Antibody</h3>
+                        <p class="gallery-desc">A playful take on affinity maturation: SARS‑CoV‑2 chisels an antibody form, reflecting coevolution and model-guided design.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
     <!-- Publications Section -->
     <section id="publications" class="publications">
         <div class="container">
@@ -231,11 +292,29 @@
                 <h2>Recent Publications</h2>
                 <p>Our latest research contributions to the field</p>
             </div>
-            <div class="publications-placeholder">
-                <div class="publication-card">
-                    <h3>Publications Coming Soon</h3>
-                    <p>We're actively working on groundbreaking research that will be published soon.</p>
-                </div>
+            <div class="publications-grid">
+                <figure class="pub-item">
+                    <a class="pub-link" href="https://www.cell.com/immunity/fulltext/S1074-7613(22)00142-X" target="_blank" rel="noopener">
+                        <img src="images/publication1.jpeg" alt="Immunity cover 1" class="pub-img" loading="lazy">
+                    </a>
+                    <figcaption>
+                        <a class="pub-link" href="https://www.cell.com/immunity/fulltext/S1074-7613(22)00142-X" target="_blank" rel="noopener">
+                            <h3 class="pub-title">Immunity</h3>
+                        </a>
+                        <p class="pub-meta">A large-scale systematic survey reveals recurring molecular features of public antibody responses to SARS-CoV-2</p>
+                    </figcaption>
+                </figure>
+                <figure class="pub-item">
+                    <a class="pub-link" href="https://www.cell.com/immunity/fulltext/S1074-7613(24)00371-6" target="_blank" rel="noopener">
+                        <img src="images/publication2.PNG" alt="Immunity cover 2" class="pub-img" loading="lazy">
+                    </a>
+                    <figcaption>
+                        <a class="pub-link" href="https://www.cell.com/immunity/fulltext/S1074-7613(24)00371-6" target="_blank" rel="noopener">
+                            <h3 class="pub-title">Immunity</h3>
+                        </a>
+                        <p class="pub-meta">An explainable language model for antibody specificity prediction using curated influenza hemagglutinin antibodies</p>
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </section>

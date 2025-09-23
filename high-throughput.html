@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Throughput Methods - Wang Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .detail-page {
+            padding-top: 100px;
+        }
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .breadcrumb a {
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb i {
+            margin: 0 0.5rem;
+            color: #6b7280;
+        }
+        .detail-hero {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+        .detail-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .detail-main h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+        .detail-main p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 2rem;
+        }
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #fef2f2;
+            border-radius: 10px;
+            border-left: 4px solid #ef4444;
+        }
+        .feature-list i {
+            color: #ef4444;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        .detail-sidebar {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        .sidebar-section h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .sidebar-section ul {
+            list-style: none;
+        }
+        .sidebar-section li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+        .figure-placeholder {
+            background: #e5e7eb;
+            border: 2px dashed #9ca3af;
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #6b7280;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: #2d3748;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            background: #1a202c;
+            transform: translateY(-2px);
+        }
+        .back-button i {
+            margin-right: 0.5rem;
+        }
+        .method-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .method-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #e5e7eb;
+            text-align: center;
+        }
+        .method-card i {
+            font-size: 3rem;
+            color: #ef4444;
+            margin-bottom: 1rem;
+        }
+        .method-card h4 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .method-card p {
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        .method-features {
+            list-style: none;
+            text-align: left;
+        }
+        .method-features li {
+            margin-bottom: 0.5rem;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        .method-features li::before {
+            content: '•';
+            color: #ef4444;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .detail-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Wang Lab</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#team" class="nav-link">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#publications" class="nav-link">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="index.html#research">Research</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>High-Throughput Methods</span>
+        </div>
+    </div>
+
+    <!-- Detail Hero -->
+    <div class="detail-hero">
+        <div class="detail-content">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Research
+            </a>
+            <h1>High-Throughput Methods & Robotic Automation</h1>
+            <p>Cutting-edge experimental platforms for rapid discovery and characterization</p>
+        </div>
+    </div>
+
+    <!-- Detail Content -->
+    <div class="detail-content">
+        <div class="detail-grid">
+            <div class="detail-main">
+                <h2>Revolutionizing Experimental Biology</h2>
+                <p>
+                    Our high-throughput methods and robotic automation systems represent the cutting edge 
+                    of experimental biology. By combining advanced display technologies with automated 
+                    laboratory workflows, we can screen thousands of molecules, proteins, and interactions 
+                    in parallel, dramatically accelerating the pace of scientific discovery.
+                </p>
+
+                <h3>Core Technologies</h3>
+                <ul class="feature-list">
+                    <li>
+                        <i class="fas fa-dna"></i>
+                        <div>
+                            <strong>mRNA Display Technology:</strong> In vitro display system that links genotype to phenotype, enabling rapid screening of protein libraries with millions of variants.
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-seedling"></i>
+                        <div>
+                            <strong>Yeast Display Systems:</strong> Eukaryotic display platform for screening protein-protein interactions and antibody-antigen binding with high throughput.
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-search"></i>
+                        <div>
+                            <strong>Deep Mutational Scanning (DMS):</strong> Comprehensive analysis of protein function by systematically testing thousands of mutations in parallel.
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-robot"></i>
+                        <div>
+                            <strong>Automated Laboratory Workflows:</strong> Robotic systems that handle sample preparation, screening, and data collection with minimal human intervention.
+                        </div>
+                    </li>
+                </ul>
+
+                <h3>Method Overview</h3>
+                <div class="method-cards">
+                    <div class="method-card">
+                        <i class="fas fa-dna"></i>
+                        <h4>mRNA Display</h4>
+                        <p>In vitro protein evolution and screening</p>
+                        <ul class="method-features">
+                            <li>Library sizes up to 10^12 variants</li>
+                            <li>Rapid selection cycles</li>
+                            <li>Compatible with any protein target</li>
+                            <li>High-throughput sequencing integration</li>
+                        </ul>
+                    </div>
+                    <div class="method-card">
+                        <i class="fas fa-seedling"></i>
+                        <h4>Yeast Display</h4>
+                        <p>Eukaryotic protein display and screening</p>
+                        <ul class="method-features">
+                            <li>Native protein folding</li>
+                            <li>Post-translational modifications</li>
+                            <li>Flow cytometry sorting</li>
+                            <li>Antibody engineering applications</li>
+                        </ul>
+                    </div>
+                    <div class="method-card">
+                        <i class="fas fa-search"></i>
+                        <h4>Deep Mutational Scanning</h4>
+                        <p>Comprehensive functional analysis</p>
+                        <ul class="method-features">
+                            <li>Systematic mutation testing</li>
+                            <li>Fitness landscape mapping</li>
+                            <li>Evolutionary constraint analysis</li>
+                            <li>Disease variant prediction</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="figure-placeholder">
+                    <i class="fas fa-cogs" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h4>High-Throughput Workflow Diagram</h4>
+                    <p>Interactive visualization of our automated experimental pipeline from library construction to data analysis</p>
+                </div>
+
+                <h3>Robotic Automation</h3>
+                <p>
+                    Our laboratory features state-of-the-art robotic systems that automate every aspect 
+                    of the experimental workflow. From liquid handling and sample preparation to plate 
+                    reading and data collection, our robots ensure consistent, reproducible results while 
+                    dramatically increasing throughput.
+                </p>
+
+                <h3>Data Integration</h3>
+                <p>
+                    High-throughput experiments generate massive amounts of data. Our integrated data 
+                    management system automatically processes, analyzes, and visualizes results, enabling 
+                    rapid identification of hits and patterns. Machine learning algorithms help identify 
+                    promising candidates for further characterization.
+                </p>
+
+                <h3>Applications in Virus Research</h3>
+                <p>
+                    These high-throughput methods are particularly powerful for studying virus-immune 
+                    system interactions. We can screen thousands of antibody variants against viral 
+                    targets, identify escape mutations, and characterize the functional effects of 
+                    mutations across entire viral proteins.
+                </p>
+            </div>
+
+            <div class="detail-sidebar">
+                <div class="sidebar-section">
+                    <h3>Related Research</h3>
+                    <ul>
+                        <li><a href="ai-science.html">AI for Science</a></li>
+                        <li><a href="lab-feedback.html">Lab-Feedback AI Modeling</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Equipment & Platforms</h3>
+                    <ul>
+                        <li>Flow Cytometry Sorters</li>
+                        <li>Liquid Handling Robots</li>
+                        <li>Plate Readers</li>
+                        <li>Next-Gen Sequencers</li>
+                        <li>Automated Incubators</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Key Publications</h3>
+                    <ul>
+                        <li>Coming Soon...</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Throughput Capacity</h3>
+                    <ul>
+                        <li>10^6 variants per day</li>
+                        <li>96-well plate processing</li>
+                        <li>Automated data analysis</li>
+                        <li>Real-time monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Contact</h3>
+                    <p>Interested in our methods?</p>
+                    <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wang Lab</h3>
+                    <p>Advancing virus-immune system research through AI and high-throughput methods.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#research">Research</a></li>
+                        <li><a href="index.html#team">Team</a></li>
+                        <li><a href="index.html#publications">Publications</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wang Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

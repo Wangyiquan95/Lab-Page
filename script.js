@@ -15,26 +15,21 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 
 // Simple smooth scrolling function (global)
 window.smoothScrollTo = function(targetId) {
-    console.log('Attempting to scroll to:', targetId);
     const target = document.querySelector(targetId);
-    console.log('Target element found:', !!target);
-    
-    if (target) {
-        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-        console.log('Scrolling to position:', offsetTop);
-        
-        // Try smooth scrolling first
-        if ('scrollBehavior' in document.documentElement.style) {
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        } else {
-            // Fallback for older browsers
-            window.scrollTo(0, offsetTop);
-        }
-    } else {
+    if (!target) {
         console.error('Target element not found:', targetId);
+        return;
+    }
+
+    // Prefer native scrollIntoView with CSS scroll-padding-top
+    if (typeof target.scrollIntoView === 'function') {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Re-align shortly after in case layout shifts due to images/fonts loading
+        setTimeout(() => target.scrollIntoView({ behavior: 'auto', block: 'start' }), 400);
+    } else {
+        // Fallback
+        const y = target.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo(0, y);
     }
 }
 

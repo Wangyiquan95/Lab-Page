@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Science - Wang Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .detail-page {
+            padding-top: 100px;
+        }
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .breadcrumb a {
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb i {
+            margin: 0 0.5rem;
+            color: #6b7280;
+        }
+        .detail-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+        .detail-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .detail-main h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+        .detail-main p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 2rem;
+        }
+        .ai-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .ai-project {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .ai-project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .ai-project i {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        .ai-project h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .ai-project p {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .ai-features {
+            list-style: none;
+        }
+        .ai-features li {
+            margin-bottom: 0.5rem;
+            color: #6b7280;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        .ai-features li::before {
+            content: '•';
+            color: #2d3748;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .detail-sidebar {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        .sidebar-section h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .sidebar-section ul {
+            list-style: none;
+        }
+        .sidebar-section li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+        .figure-placeholder {
+            background: #e5e7eb;
+            border: 2px dashed #9ca3af;
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #6b7280;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: #2d3748;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            background: #1a202c;
+            transform: translateY(-2px);
+        }
+        .back-button i {
+            margin-right: 0.5rem;
+        }
+        .integration-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .integration-section h3 {
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .integration-section p {
+            color: #4b5563;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .detail-sidebar {
+                position: static;
+            }
+            .ai-projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Wang Lab</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#team" class="nav-link">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#publications" class="nav-link">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="index.html#research">Research</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>AI for Science</span>
+        </div>
+    </div>
+
+    <!-- Detail Hero -->
+    <div class="detail-hero">
+        <div class="detail-content">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Research
+            </a>
+            <h1>AI for Science</h1>
+            <p>Revolutionizing scientific research through artificial intelligence and machine learning</p>
+        </div>
+    </div>
+
+    <!-- Detail Content -->
+    <div class="detail-content">
+        <div class="detail-grid">
+            <div class="detail-main">
+                <h2>Transforming Scientific Discovery with AI</h2>
+                <p>
+                    Our AI for Science initiative represents a comprehensive approach to integrating artificial 
+                    intelligence into every aspect of scientific research. By developing specialized AI systems 
+                    for different research tasks, we're creating a new paradigm where human researchers and 
+                    AI agents work together to accelerate discovery and improve scientific outcomes.
+                </p>
+
+                <h3>AI Research Projects</h3>
+                <div class="ai-projects">
+                    <div class="ai-project">
+                        <i class="fas fa-search"></i>
+                        <h3>AI Researcher</h3>
+                        <p>Automated question generation, literature review, and paper writing through advanced AI systems.</p>
+                        <ul class="ai-features">
+                            <li>Automated question generation from knowledge gaps</li>
+                            <li>Intelligent literature review and analysis</li>
+                            <li>Scientific writing assistance and improvement</li>
+                            <li>Research gap identification and analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="ai-project">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>AI Bioinformatics</h3>
+                        <p>Intelligent data processing, analysis, and interpretation for biological research.</p>
+                        <ul class="ai-features">
+                            <li>Automated data cleaning and quality control</li>
+                            <li>Advanced statistical and ML analysis</li>
+                            <li>Biological interpretation of results</li>
+                            <li>Multi-omics data integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="ai-project">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>AI Reproduction</h3>
+                        <p>Automated reproduction of scientific studies through intelligent GitHub-based workflows.</p>
+                        <ul class="ai-features">
+                            <li>Automated code analysis and environment setup</li>
+                            <li>Data pipeline reconstruction</li>
+                            <li>Error detection and correction</li>
+                            <li>Validation and verification systems</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="figure-placeholder">
+                    <i class="fas fa-brain" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h4>AI for Science Ecosystem</h4>
+                    <p>Interactive diagram showing how different AI systems work together to support scientific research</p>
+                </div>
+
+                <div class="integration-section">
+                    <h3>Integrated AI Ecosystem</h3>
+                    <p>
+                        These AI systems work together as an integrated ecosystem, where each component 
+                        supports and enhances the others. Data flows seamlessly between systems, creating 
+                        a powerful research environment that combines human expertise with AI capabilities.
+                    </p>
+                </div>
+
+                <h3>Technical Innovation</h3>
+                <p>
+                    Our AI systems employ cutting-edge machine learning techniques including transformer 
+                    models, graph neural networks, and reinforcement learning. We continuously update 
+                    and improve our models based on new data and research findings, ensuring they remain 
+                    at the forefront of AI technology.
+                </p>
+
+                <h3>Impact on Research</h3>
+                <p>
+                    The integration of AI into our research processes has dramatically accelerated our 
+                    ability to generate hypotheses, analyze data, and draw meaningful conclusions. By 
+                    automating routine tasks and providing intelligent assistance, we can focus on the 
+                    most creative and challenging aspects of scientific research.
+                </p>
+
+                <h3>Future Directions</h3>
+                <p>
+                    We are continuously expanding our AI capabilities, developing new tools and 
+                    integrating them into our research workflow. Our goal is to create a fully 
+                    integrated AI research environment that can adapt to new challenges and 
+                    continuously improve its performance.
+                </p>
+            </div>
+
+            <div class="detail-sidebar">
+                <div class="sidebar-section">
+                    <h3>Related Research</h3>
+                    <ul>
+                        <li><a href="high-throughput.html">High-Throughput Methods</a></li>
+                        <li><a href="lab-feedback.html">Lab-Feedback AI Modeling</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>AI Technologies</h3>
+                    <ul>
+                        <li>Large Language Models</li>
+                        <li>Graph Neural Networks</li>
+                        <li>Transformer Models</li>
+                        <li>Reinforcement Learning</li>
+                        <li>Computer Vision</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Key Publications</h3>
+                    <ul>
+                        <li>Coming Soon...</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Applications</h3>
+                    <ul>
+                        <li>Viral Evolution Prediction</li>
+                        <li>Antibody Design</li>
+                        <li>Drug Discovery</li>
+                        <li>Scientific Writing</li>
+                        <li>Data Analysis</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Contact</h3>
+                    <p>Interested in our AI research tools?</p>
+                    <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wang Lab</h3>
+                    <p>Advancing virus-immune system research through AI and high-throughput methods.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#research">Research</a></li>
+                        <li><a href="index.html#team">Team</a></li>
+                        <li><a href="index.html#publications">Publications</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wang Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
