@@ -1266,6 +1266,13 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Safety: prevent oversized images from overflowing on static hosts */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Ensure anchored sections account for fixed navbar height */
 :root {
     --nav-offset: 90px;
