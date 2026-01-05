@@ -117,7 +117,7 @@
             <div class="mission-content">
                 <h2>Our Mission</h2>
                 <p>
-                    Through <strong>Mechanistic Understanding of Sequence Evolution (MUSE)</strong>, 
+                    Through <strong><a href="muse.html" class="muse-link">Mechanistic Understanding of Sequence Evolution (MUSE)</a></strong>, 
                     we aim to create interpretable models that can anticipate viral evolution and guide
                     the development of next-generation therapeutics and vaccines.
                 </p>
@@ -149,50 +149,25 @@
             <div class="research-grid">
                 <!-- High-throughput Methods -->
                 <div class="research-card" onclick="navigateToPage('high-throughput.html')">
-                    <div class="research-content">
-                        <div class="card-icon">
-                            <i class="fas fa-dna"></i>
-                        </div>
-                        <h3>High-Throughput Methods & Robotic Automation</h3>
-                        <ul class="research-list">
-                            <li>Yeast Display Systems</li>
-                            <li>mRNA Display Technology</li>
-                            <li>Deep Mutational Scanning (DMS)</li>
-                            <li>Automated Laboratory Workflows</li>
-                        </ul>
-                        <a href="high-throughput.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="research-title">High-Throughput Automation</h3>
+                    <div class="research-image">
+                        <img src="images/p1.jpg" alt="High-Throughput Methods & Robotic Automation">
                     </div>
                 </div>
 
                 <!-- Lab-Feedback AI modeling -->
                 <div class="research-card" onclick="navigateToPage('lab-feedback.html')">
-                    <div class="research-content">
-                        <div class="card-icon">
-                            <i class="fas fa-atom"></i>
-                        </div>
-                        <h3>Lab-Feedback AI Modeling</h3>
-                        <ul class="research-list">
-                            <li>Foundation Model for Influenza Virus Evolution</li>
-                            <li>Generative Model for Antibody Design</li>
-                            <li>Continuous Model Refinement via Lab-Feedback</li>
-                        </ul>
-                        <a href="lab-feedback.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="research-title">Lab-Feedback AI Modeling</h3>
+                    <div class="research-image">
+                        <img src="images/p2.jpg" alt="Lab-Feedback AI Modeling">
                     </div>
                 </div>
 
-                <!-- AI for Science -->
+                <!-- AI Agents -->
                 <div class="research-card" onclick="navigateToPage('ai-science.html')">
-                    <div class="research-content">
-                        <div class="card-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                        <h3>AI Agents and Tools</h3>
-                        <ul class="research-list">
-                            <li>AI Researcher (automated literature review & paper writing)</li>
-                            <li>AI Bioinformatics (data cleaning, analysis & interpretation)</li>
-                            <li>AI Reproduction (GitHub-mode study reproduction)</li>
-                        </ul>
-                        <a href="ai-science.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="research-title">AI Agents</h3>
+                    <div class="research-image">
+                        <img src="images/p3.jpg" alt="AI Agents">
                     </div>
                 </div>
             </div>
@@ -214,11 +189,18 @@
                     <p>Dr. Yiquan Wang</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fas fa-users"></i>
+                    <div class="team-avatar photo">
+                        <img src="images/Google_Gemini_logo.png" alt="Gemini" />
                     </div>
-                    <h3>Research Team</h3>
-                    <p>Postdocs, Graduate Students, and Collaborators</p>
+                    <h3>AI Research Assistant</h3>
+                    <p>Gemini</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar photo">
+                        <img src="images/Claude_AI_symbol.png" alt="Claude" />
+                    </div>
+                    <h3>AI Coding Assistant</h3>
+                    <p>Claude</p>
                 </div>
             </div>
         </div>
@@ -231,13 +213,13 @@
                 <h2>Gallery</h2>
             </div>
             <div class="gallery-grid">
-                <figure class="gallery-item">
+                <!-- <figure class="gallery-item">
                     <img src="images/art1.jpg" alt="Micro-pianists exploring ivory keys" class="gallery-img" loading="lazy">
                     <figcaption>
                         <h3 class="gallery-title">Micro-Pianists</h3>
                         <p class="gallery-desc">A surreal scene of tiny explorers marching across piano keys, evoking rhythm in biology and harmony in discovery.</p>
                     </figcaption>
-                </figure>
+                </figure> -->
                 <figure class="gallery-item">
                     <img src="images/art2.jpg" alt="Bacteriophage standing on martian-like terrain" class="gallery-img" loading="lazy">
                     <figcaption>
@@ -245,13 +227,13 @@
                         <p class="gallery-desc">An iconic bacteriophage rendered as a vigilant sentinel, symbolizing precision in viral targeting and therapeutic design.</p>
                     </figcaption>
                 </figure>
-                <figure class="gallery-item">
+                <!-- <figure class="gallery-item">
                     <img src="images/art3.jpg" alt="Viruses illuminated in a cavern" class="gallery-img" loading="lazy">
                     <figcaption>
                         <h3 class="gallery-title">Cavern of Virions</h3>
                         <p class="gallery-desc">Light breaks into a dark cavern of virions, capturing the moment of insight when data reveals hidden biological structure.</p>
                     </figcaption>
-                </figure>
+                </figure> -->
                 <figure class="gallery-item">
                     <img src="images/art4.jpg" alt="Starry Night rendered with molecular motifs" class="gallery-img" loading="lazy">
                     <figcaption>
@@ -259,13 +241,13 @@
                         <p class="gallery-desc">A tribute to Starry Night, reimagined with molecular textures—where patterns echo stochastic dynamics in evolution.</p>
                     </figcaption>
                 </figure>
-                <figure class="gallery-item">
+                <!-- <figure class="gallery-item">
                     <img src="images/art5.jpg" alt="Vaccination bottle with mRNA and lab tools" class="gallery-img" loading="lazy">
                     <figcaption>
                         <h3 class="gallery-title">Vaccination</h3>
                         <p class="gallery-desc">mRNA technology encapsulated—capturing the interplay between experimental innovation and AI-guided design.</p>
                     </figcaption>
-                </figure>
+                </figure> -->
                 <figure class="gallery-item">
                     <img src="images/art6.jpg" alt="Reshaping Antibody sculpture by a cartoon SARS-CoV-2" class="gallery-img" loading="lazy">
                     <figcaption>
@@ -273,6 +255,9 @@
                         <p class="gallery-desc">A playful take on affinity maturation: SARS‑CoV‑2 chisels an antibody form, reflecting coevolution and model-guided design.</p>
                     </figcaption>
                 </figure>
+            </div>
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="https://yiquan2.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View More Art</a>
             </div>
         </div>
     </section>
@@ -373,7 +358,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Wang Lab. All rights reserved.</p>
+                <p>&copy; 2026 Wang Lab. All rights reserved.</p>
             </div>
         </div>
     </footer>

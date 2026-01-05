@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI for Science - Wang Lab</title>
+    <title>AI Agents - Wang Lab</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -22,9 +22,10 @@
             padding: 0 20px;
         }
         .breadcrumb a {
-            color: #2d3748;
+            color: #111827;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9375rem;
         }
         .breadcrumb a:hover {
             text-decoration: underline;
@@ -32,12 +33,25 @@
         .breadcrumb i {
             margin: 0 0.5rem;
             color: #6b7280;
+            font-size: 0.75rem;
         }
         .detail-hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 4rem 0;
             margin-bottom: 4rem;
+        }
+        .detail-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+        .detail-hero p {
+            font-size: 1.25rem;
+            color: #e5e7eb;
+            margin-top: 0.5rem;
+            font-weight: 400;
         }
         .detail-content {
             max-width: 1000px;
@@ -51,16 +65,18 @@
             margin-bottom: 4rem;
         }
         .detail-main h2 {
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 700;
-            color: #1f2937;
+            color: #111827;
             margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
         }
         .detail-main p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4b5563;
+            font-size: 1.0625rem;
+            line-height: 1.85;
+            color: #374151;
             margin-bottom: 2rem;
+            text-align: justify;
         }
         .ai-projects {
             display: grid;
@@ -81,32 +97,35 @@
         }
         .ai-project i {
             font-size: 2.5rem;
-            color: #2d3748;
+            color: #111827;
             margin-bottom: 1rem;
         }
         .ai-project h3 {
-            color: #1f2937;
+            color: #111827;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
+            font-weight: 600;
         }
         .ai-project p {
-            color: #4b5563;
+            color: #374151;
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            font-size: 0.9375rem;
+            line-height: 1.7;
         }
         .ai-features {
             list-style: none;
         }
         .ai-features li {
             margin-bottom: 0.5rem;
-            color: #6b7280;
-            font-size: 0.9rem;
+            color: #374151;
+            font-size: 0.9375rem;
             display: flex;
             align-items: center;
+            line-height: 1.6;
         }
         .ai-features li::before {
             content: '•';
-            color: #2d3748;
+            color: #111827;
             font-weight: bold;
             margin-right: 0.5rem;
         }
@@ -119,16 +138,18 @@
             top: 100px;
         }
         .sidebar-section h3 {
-            color: #1f2937;
+            color: #111827;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
+            font-weight: 600;
         }
         .sidebar-section ul {
             list-style: none;
         }
         .sidebar-section li {
             margin-bottom: 0.5rem;
-            color: #4b5563;
+            color: #374151;
+            font-size: 0.9375rem;
         }
         .figure-placeholder {
             background: #e5e7eb;
@@ -138,6 +159,26 @@
             text-align: center;
             margin: 2rem 0;
             color: #6b7280;
+        }
+        .ai-figure {
+            margin: 2rem 0 3rem 0;
+        }
+        .ai-figure img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: block;
+        }
+        .ai-figure figcaption {
+            text-align: center;
+            font-style: italic;
+            color: #4b5563;
+            font-size: 0.9375rem;
+            margin-top: 0.75rem;
+            padding: 0 1rem;
+            line-height: 1.6;
         }
         .back-button {
             display: inline-flex;
@@ -166,13 +207,15 @@
             text-align: center;
         }
         .integration-section h3 {
-            color: #1f2937;
+            color: #111827;
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            font-size: 1.75rem;
+            font-weight: 600;
         }
         .integration-section p {
-            color: #4b5563;
-            font-size: 1.1rem;
+            color: #374151;
+            font-size: 1.0625rem;
+            line-height: 1.85;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -229,7 +272,7 @@
             <i class="fas fa-chevron-right"></i>
             <a href="index.html#research">Research</a>
             <i class="fas fa-chevron-right"></i>
-            <span>AI for Science</span>
+            <span>AI Agents</span>
         </div>
     </div>
 
@@ -240,7 +283,7 @@
                 <i class="fas fa-arrow-left"></i>
                 Back to Research
             </a>
-            <h1>AI for Science</h1>
+            <h1>AI Agents</h1>
             <p>Revolutionizing scientific research through artificial intelligence and machine learning</p>
         </div>
     </div>
@@ -249,54 +292,16 @@
     <div class="detail-content">
         <div class="detail-grid">
             <div class="detail-main">
-                <h2>Transforming Scientific Discovery with AI</h2>
-                <p>
-                    Our AI for Science initiative represents a comprehensive approach to integrating artificial 
-                    intelligence into every aspect of scientific research. By developing specialized AI systems 
-                    for different research tasks, we're creating a new paradigm where human researchers and 
-                    AI agents work together to accelerate discovery and improve scientific outcomes.
-                </p>
-
                 <!-- Overview Image -->
-                <h3>Overview of AI for Science</h3>
-                <div class="overview-image">
-                    <img src="images/ai-science-overview.png" alt="AI for Science Overview" style="width: 100%; max-width: 800px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 1rem 0 2rem 0;">
-                </div>
+                <h3>Overview of AI agent</h3>
+                <figure class="ai-figure">
+                    <img src="images/ai-science-overview.jpg" alt="AI Agents Overview">
+                    <figcaption>AI agent integrates literature and data (Research), computational modeling and analysis (Analyst), and experimental design and validation (Experiment) in an iterative feedback loop to accelerate scientific discovery.</figcaption>
+                </figure>
 
-                <h3>AI Research Projects</h3>
-                <div class="ai-projects">
-                    
-                    <div class="ai-project">
-                        <i class="fas fa-search"></i>
-                        <h3>AI Researcher</h3>
-                        <p>Automated question generation, literature review, and paper writing through advanced AI systems.</p>
-                        <ul class="ai-features">
-                            <li>Automated question generation from knowledge gaps</li>
-                            <li>Intelligent literature review and analysis</li>
-                            <li>Scientific writing assistance and improvement</li>
-                            <li>Research gap identification and analysis</li>
-                        </ul>
-                    </div>
 
-                    <div class="ai-project">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>AI Bioinformatics</h3>
-                        <p>Intelligent data processing, analysis, and interpretation for biological research.</p>
-                        <ul class="ai-features">
-                            <li>Automated data cleaning and quality control</li>
-                            <li>Advanced statistical and ML analysis</li>
-                            <li>Biological interpretation of results</li>
-                            <li>Multi-omics data integration</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Impact on Research</h3>
                 <p>
-                    The integration of AI into our research processes has dramatically accelerated our 
-                    ability to generate hypotheses, analyze data, and draw meaningful conclusions. By 
-                    automating routine tasks and providing intelligent assistance, we can focus on the 
-                    most creative and challenging aspects of scientific research.
+                    An <strong>AI agent</strong> is a computational system that autonomously integrates prior knowledge, data, and algorithms to reason, make decisions, and take actions toward a scientific goal. In our lab, AI agents synthesize literature and datasets, perform analysis and modeling, and iteratively guide experimental design and interpretation through feedback from experimental results.
                 </p>
             </div>
 
@@ -326,14 +331,6 @@
                     </ul>
                 </div>
 
-                <div class="sidebar-section">
-                    <h3>Applications</h3>
-                    <ul>
-                        <li>Scientific Writing</li>
-                        <li>Data Visualization</li>
-                        <li>Data Analysis</li>
-                    </ul>
-                </div>
 
             </div>
         </div>
@@ -367,7 +364,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Wang Lab. All rights reserved.</p>
+                <p>&copy; 2026 Wang Lab. All rights reserved.</p>
             </div>
         </div>
     </footer>

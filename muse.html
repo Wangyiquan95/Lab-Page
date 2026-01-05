@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-Throughput Methods - Wang Lab</title>
+    <title>About MUSE - Wang Lab</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -36,7 +36,7 @@
             font-size: 0.75rem;
         }
         .detail-hero {
-            background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%);
+            background: linear-gradient(135deg, #4a90e2 0%, #2d3748 50%, #1a365d 100%);
             color: white;
             padding: 4rem 0;
             margin-bottom: 4rem;
@@ -78,24 +78,6 @@
             margin-bottom: 2rem;
             text-align: justify;
         }
-        .feature-list {
-            list-style: none;
-            margin: 2rem 0;
-        }
-        .feature-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #eff6ff;
-            border-radius: 10px;
-            border-left: 4px solid #3b82f6;
-        }
-        .feature-list i {
-            color: #3b82f6;
-            margin-right: 1rem;
-            font-size: 1.2rem;
-        }
         .detail-sidebar {
             background: #f8fafc;
             padding: 2rem;
@@ -118,14 +100,12 @@
             color: #374151;
             font-size: 0.9375rem;
         }
-        .figure-placeholder {
-            background: #e5e7eb;
-            border: 2px dashed #9ca3af;
-            border-radius: 10px;
-            padding: 3rem;
-            text-align: center;
-            margin: 2rem 0;
-            color: #6b7280;
+        .sidebar-section a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .sidebar-section a:hover {
+            text-decoration: underline;
         }
         .back-button {
             display: inline-flex;
@@ -146,56 +126,48 @@
         .back-button i {
             margin-right: 0.5rem;
         }
-        .method-cards {
+        /* MUSE-specific styles */
+        .model-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
         }
-        .method-card {
+        .model-card {
             background: #f8fafc;
             padding: 2rem;
             border-radius: 15px;
             border: 2px solid #e5e7eb;
-            text-align: center;
+            transition: all 0.3s ease;
         }
-        .method-card i {
-            font-size: 3rem;
-            color: #3b82f6;
-            margin-bottom: 1rem;
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #4a90e2;
         }
-        .method-card h4 {
+        .model-card h4 {
             color: #111827;
             margin-bottom: 1rem;
             font-size: 1.25rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .method-card p {
+        .model-card h4 i {
+            color: #4a90e2;
+            font-size: 1.25rem;
+        }
+        .model-card p {
             color: #374151;
             margin-bottom: 1rem;
             font-size: 0.9375rem;
             line-height: 1.7;
         }
-        .method-features {
-            list-style: none;
-            text-align: left;
-        }
-        .method-features li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-            font-size: 0.9375rem;
-            line-height: 1.6;
-        }
-        .method-features li::before {
-            content: '•';
-            color: #3b82f6;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        .ht-figure {
+        .muse-figure {
             margin: 2rem 0 3rem 0;
         }
-        .ht-figure img {
+        .muse-figure img {
             width: 100%;
             max-width: 800px;
             height: auto;
@@ -203,7 +175,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             display: block;
         }
-        .ht-figure figcaption {
+        .muse-figure figcaption {
             text-align: center;
             font-style: italic;
             color: #4b5563;
@@ -220,6 +192,9 @@
             .detail-sidebar {
                 position: static;
             }
+            .model-cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -235,10 +210,16 @@
                     <a href="index.html#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a href="index.html#mission" class="nav-link">Mission</a>
+                </li>
+                <li class="nav-item">
                     <a href="index.html#research" class="nav-link">Research</a>
                 </li>
                 <li class="nav-item">
                     <a href="index.html#team" class="nav-link">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#gallery" class="nav-link">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a href="index.html#publications" class="nav-link">Publications</a>
@@ -260,21 +241,21 @@
         <div class="breadcrumb-content">
             <a href="index.html">Home</a>
             <i class="fas fa-chevron-right"></i>
-            <a href="index.html#research">Research</a>
+            <a href="index.html#mission">Mission</a>
             <i class="fas fa-chevron-right"></i>
-            <span>High-Throughput Methods</span>
+            <span>About MUSE</span>
         </div>
     </div>
 
     <!-- Detail Hero -->
     <div class="detail-hero">
         <div class="detail-content">
-            <a href="index.html" class="back-button">
+            <a href="index.html#mission" class="back-button">
                 <i class="fas fa-arrow-left"></i>
-                Back to Research
+                Back to Mission
             </a>
-            <h1>High-Throughput Methods & Robotic Automation</h1>
-            <p>Cutting-edge experimental platforms for antibody-antigen interactions</p>
+            <h1>About MUSE</h1>
+            <p>Mechanistic Understanding of Sequence Evolution</p>
         </div>
     </div>
 
@@ -282,65 +263,71 @@
     <div class="detail-content">
         <div class="detail-grid">
             <div class="detail-main">
-                <h3>Overview of high-throughput methods and robotic automation </h3>
-                <!-- Overview Image -->
-                <figure class="ht-figure">
-                    <img src="images/high-throughput-overview.jpg" alt="High-Throughput Methods Overview">
-                    <figcaption>Overview of high-throughput methods and robotic automation platforms for antibody-antigen interaction studies</figcaption>
+                <h3>Overview of the MUSE program</h3>
+                <figure class="muse-figure">
+                    <img src="images/Muse_overview.jpg" alt="MUSE Overview">
+                    <figcaption>Overview of the MUSE (Mechanistic Understanding of Sequence Evolution) program and its model series</figcaption>
                 </figure>
 
-                <h3>Core Technologies</h3>
-                <ul class="feature-list">
-                    <li>
-                        <i class="fas fa-seedling"></i>
-                        <div>
-                            <strong>Yeast Display Systems:</strong> Eukaryotic display platform for screening protein-protein interactions and antibody-antigen binding with high throughput.
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-dna"></i>
-                        <div>
-                            <strong>mRNA Display Technology:</strong> In vitro display system that links genotype to phenotype, enabling rapid screening of protein libraries with millions of variants.
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-search"></i>
-                        <div>
-                            <strong>Deep Mutational Scanning (DMS):</strong> Comprehensive analysis of protein function by systematically testing thousands of mutations in parallel.
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-robot"></i>
-                        <div>
-                            <strong>Automated Laboratory Workflows:</strong> Robotic systems that handle sample preparation, screening, and data collection with minimal human intervention.
-                        </div>
-                    </li>
-                </ul>
 
-                <h3>Applications in Virus and Antibody Research</h3>
                 <p>
-                    These high-throughput methods are powerful for studying virus-immune 
-                    system interactions. We can screen thousands of antibody variants against viral 
-                    targets, identify escape mutations, and characterize the functional effects of 
-                    mutations across entire viral proteins.
+                    The <strong>MUSE program</strong> (Mechanistic Understanding of Sequence Evolution) is a family of foundation models designed to uncover the biological rules governing sequence evolution across RNA, protein, and multi-component molecular systems. Unlike traditional predictive models that focus solely on outcomes, MUSE models are explicitly trained to reveal why certain mutations or sequence changes are tolerated, deleterious, or compensable, providing mechanistic insight into molecular constraints.
                 </p>
+
+                <h3>The MUSE Model Series</h3>
+                <p>
+                    The MUSE program includes four core models, each designed to capture different aspects of molecular evolution:
+                </p>
+
+                <div class="model-cards">
+                    <div class="model-card">
+                        <h4><i class="fas fa-dna"></i> MuseRNA</h4>
+                        <p>
+                            Learns RNA structural and interaction constraints to explain how mutations impact folding, stability, and functional interactions.
+                        </p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4><i class="fas fa-project-diagram"></i> MuseFold</h4>
+                        <p>
+                            Captures protein folding, stability, and epistatic effects to elucidate structure-function principles.
+                        </p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4><i class="fas fa-puzzle-piece"></i> MuseAssemble</h4>
+                        <p>
+                            Models the rules governing multi-component assembly, including viral genome packaging and oligomer formation.
+                        </p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4><i class="fas fa-handshake"></i> MuseBind</h4>
+                        <p>
+                            Learns binding interface constraints to explain molecular recognition and interaction specificity.
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div class="detail-sidebar">
+
                 <div class="sidebar-section">
                     <h3>Related Research</h3>
                     <ul>
-                        <li><a href="ai-science.html">AI Agents</a></li>
                         <li><a href="lab-feedback.html">Lab-Feedback AI Modeling</a></li>
+                        <li><a href="ai-science.html">AI Agents</a></li>
+                        <li><a href="high-throughput.html">High-Throughput Methods</a></li>
                     </ul>
                 </div>
 
                 <div class="sidebar-section">
-                    <h3>Equipment & Platforms</h3>
+                    <h3>Applications</h3>
                     <ul>
-                        <li>Flow Cytometry Sorters</li>
-                        <li>Liquid Handling Robots</li>
-                        <li>Plate Readers</li>
+                        <li>Viral Evolution Prediction</li>
+                        <li>Antibody Design</li>
+                        <li>Protein Engineering</li>
+                        <li>RNA Therapeutics</li>
                     </ul>
                 </div>
 
@@ -350,16 +337,6 @@
                         <li>Coming Soon...</li>
                     </ul>
                 </div>
-
-                <div class="sidebar-section">
-                    <h3>Throughput Capacity</h3>
-                    <ul>
-                        <li>10^6 variants per day</li>
-                        <li>96-well plate processing</li>
-                        <li>Automated data analysis</li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </div>
@@ -375,6 +352,7 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
+                        <li><a href="index.html#mission">Mission</a></li>
                         <li><a href="index.html#research">Research</a></li>
                         <li><a href="index.html#team">Team</a></li>
                         <li><a href="index.html#gallery">Gallery</a></li>
@@ -400,3 +378,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

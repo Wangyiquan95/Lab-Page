@@ -117,4 +117,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-© 2024 Wang Lab. All rights reserved.
+© 2026 Wang Lab. All rights reserved.
