@@ -548,6 +548,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+    position: relative;
+    z-index: 1; /* Ensure grid is above mission background overlay */
 }
 
 @media (max-width: 992px) {

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Wang Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .detail-page {
+            padding-top: 100px;
+        }
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .breadcrumb a {
+            color: #111827;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb i {
+            margin: 0 0.5rem;
+            color: #6b7280;
+            font-size: 0.75rem;
+        }
+        .detail-hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+        .detail-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+        .detail-hero p {
+            font-size: 1.25rem;
+            color: #e5e7eb;
+            margin-top: 0.5rem;
+            font-weight: 400;
+        }
+        .detail-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            background: #111827;
+            transform: translateY(-2px);
+        }
+        .back-button i {
+            margin-right: 0.5rem;
+        }
+        .publications-section {
+            padding: 3rem 0;
+            background: #ffffff;
+        }
+        .publications-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .publication-item {
+            padding: 2rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            transition: background-color 0.2s ease;
+        }
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+        .publication-item:hover {
+            background-color: #f9fafb;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: -1rem;
+            margin-right: -1rem;
+            border-radius: 8px;
+        }
+        .publication-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+        .publication-title a {
+            color: #111827;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .publication-title a:hover {
+            color: #3b82f6;
+        }
+        .publication-authors {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .publication-venue {
+            font-size: 1rem;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .publication-year {
+            display: inline-block;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: #111827;
+            margin-right: 1rem;
+        }
+        .publication-links {
+            display: inline-flex;
+            gap: 1rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .publication-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9375rem;
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .publication-links a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        .publication-links i {
+            font-size: 0.875rem;
+        }
+        .year-group {
+            margin-bottom: 3rem;
+        }
+        .year-header {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .scholar-link {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        @media (max-width: 768px) {
+            .detail-hero h1 {
+                font-size: 2rem;
+            }
+            .detail-hero p {
+                font-size: 1.125rem;
+            }
+            .publication-title {
+                font-size: 1.125rem;
+            }
+            .publication-item {
+                padding: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Wang Lab</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="publications.html" class="nav-link">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Publications</span>
+        </div>
+    </div>
+
+    <!-- Detail Hero -->
+    <div class="detail-hero">
+        <div class="detail-content">
+            <a href="index.html#publications" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+            <h1>Publications</h1>
+            <p>Research contributions from the Wang Lab</p>
+        </div>
+    </div>
+
+    <!-- Publications Section -->
+    <section class="publications-section">
+        <div class="detail-content">
+            <!-- Publications will be organized by year -->
+            <div id="publications-container">
+                <!-- Publications will be dynamically loaded here -->
+                <p style="text-align: center; color: #6b7280; padding: 2rem;">Loading publications...</p>
+            </div>
+
+            <div class="scholar-link">
+                <a href="https://scholar.google.com/citations?user=V7xAPzUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="fab fa-google"></i> View on Google Scholar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wang Lab</h3>
+                    <p>Advancing virus-immune system research through AI and high-throughput methods.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#research">Research</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/Wang-Lab-UF" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/Yiquan_W" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/yiquan-w/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wang Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Publications data from NCBI My Bibliography
+        // Source: https://www.ncbi.nlm.nih.gov/myncbi/yiquan.wang.1/bibliography/public/
+        const publications = [
+            {
+                year: 2025,
+                title: "High-throughput synthesis and specificity characterization of natively paired influenza hemagglutinin antibodies with oPool(+) display",
+                authors: "Ouyang WO, Lv H, Liu W, Lei R, Mou Z, Pholcharee T, Talmage L, Tong M, Ji W, Wang Y, Dailey KE, Gopal AB, Choi D, Ardagh MR, Rodriguez LA, Guthmiller JJ, Dai X, Wu NC",
+                venue: "Science Translational Medicine",
+                link: "https://www.science.org/doi/10.1126/scitranslmed.adt4147",
+                doi: "10.1126/scitranslmed.adt4147",
+                pubmed: "40901925"
+            },
+            {
+                year: 2025,
+                title: "Probing the functional constraints of influenza A virus NEP by deep mutational scanning",
+                authors: "Teo QW, Wang Y, Lv H, Oade MS, Mao KJ, Tan TJC, Huan YW, Rivera-Cardona J, Shao EK, Choi D, Wang C, Tavakoli Dargani Z, Brooke CB, Te Velthuis AJW, Wu NC",
+                venue: "Cell Reports",
+                link: "https://www.cell.com/cell-reports/fulltext/S2211-1247(24)01151-9",
+                doi: "10.1016/j.celrep.2024.115196",
+                pubmed: "39817904"
+            },
+            {
+                year: 2024,
+                title: "An explainable language model for antibody specificity prediction using curated influenza hemagglutinin antibodies",
+                authors: "Wang Y, Lv H, Teo QW, Lei R, Gopal AB, Ouyang WO, Yeung YH, Tan TJC, Choi D, Shen IR, Chen X, Graham CS, Wu NC",
+                venue: "Immunity",
+                link: "https://www.cell.com/immunity/fulltext/S1074-7613(24)00371-6",
+                doi: "10.1016/j.immuni.2024.07.022",
+                pubmed: "39163866"
+            },
+            {
+                year: 2024,
+                title: "Deep mutational scanning of influenza A virus NEP reveals pleiotropic mutations in its N-terminal domain",
+                authors: "Teo QW, Wang Y, Lv H, Mao KJ, Tan TJC, Huan YW, Rivera-Cardona J, Shao EK, Choi D, Dargani ZT, Brooke CB, Wu NC",
+                venue: "bioRxiv",
+                link: "https://www.biorxiv.org/content/10.1101/2024.05.16.594574",
+                doi: "10.1101/2024.05.16.594574",
+                pubmed: "38798526"
+            },
+            {
+                year: 2023,
+                title: "Stringent and complex sequence constraints of an IGHV1-69 broadly neutralizing antibody to influenza HA stem",
+                authors: "Teo QW, Wang Y, Lv H, Tan TJC, Lei R, Mao KJ, Wu NC",
+                venue: "Cell Reports",
+                link: "https://www.cell.com/cell-reports/fulltext/S2211-1247(23)01341-0",
+                doi: "10.1016/j.celrep.2023.113410",
+                pubmed: "37976161"
+            },
+            {
+                year: 2023,
+                title: "Leveraging vaccination-induced protective antibodies to define conserved epitopes on influenza N2 neuraminidase",
+                authors: "Lei R, Kim W, Lv H, Mou Z, Scherm MJ, Schmitz AJ, Turner JS, Tan TJC, Wang Y, Ouyang WO, Liang W, Rivera-Cardona J, Teo C, Graham CS, Brooke CB, Presti RM, Mok CKP, Krammer F, Dai X, Ellebedy AH, Wu NC",
+                venue: "Immunity",
+                link: "https://www.cell.com/immunity/fulltext/S1074-7613(23)00405-6",
+                doi: "10.1016/j.immuni.2023.10.005",
+                pubmed: "37967533"
+            },
+            {
+                year: 2023,
+                title: "Contrasting roles of MERS-CoV and SARS-CoV-2 internal proteins in pathogenesis in mice",
+                authors: "Wong L-YR, Odle A, Luhmann E, Wu DC, Wang Y, Teo QW, Ptak C, Sariol A, Lowery S, Mack M, Meyerholz DK, Wu NC, Radoshevich L, Perlman S",
+                venue: "mBio",
+                link: "https://journals.asm.org/doi/10.1128/mbio.02476-23",
+                doi: "10.1128/mbio.02476-23",
+                pubmed: "37882568"
+            },
+            {
+                year: 2023,
+                title: "Mutational fitness landscape of human influenza H3N2 neuraminidase",
+                authors: "Lei R, Hernandez Garcia A, Tan TJC, Teo QW, Wang Y, Zhang X, Luo S, Nair SK, Peng J, Wu NC",
+                venue: "Cell Reports",
+                link: "https://www.cell.com/cell-reports/fulltext/S2211-1247(23)01135-6",
+                doi: "10.1016/j.celrep.2023.113356",
+                pubmed: "37851571"
+            },
+            {
+                year: 2023,
+                title: "An explainable language model for antibody specificity prediction using curated influenza hemagglutinin antibodies",
+                authors: "Wang Y, Lv H, Lei R, Yeung YH, Shen IR, Choi D, Teo QW, Tan TJC, Gopal AB, Chen X, Graham CS, Wu NC",
+                venue: "bioRxiv",
+                link: "https://www.biorxiv.org/content/10.1101/2023.09.11.557288",
+                doi: "10.1101/2023.09.11.557288",
+                pubmed: "37745338"
+            },
+            {
+                year: 2023,
+                title: "Stringent and complex sequence constraints of an IGHV1-69 broadly neutralizing antibody to influenza HA stem",
+                authors: "Teo QW, Wang Y, Lv H, Tan TJC, Lei R, Mao KJ, Wu NC",
+                venue: "bioRxiv",
+                link: "https://www.biorxiv.org/content/10.1101/2023.07.06.547908",
+                doi: "10.1101/2023.07.06.547908",
+                pubmed: "37461670"
+            },
+            {
+                year: 2022,
+                title: "Prevalence and mechanisms of evolutionary contingency in human influenza H3N2 neuraminidase",
+                authors: "Lei R, Tan TJC, Hernandez Garcia A, Wang Y, Diefenbacher M, Teo C, Gopan G, Tavakoli Dargani Z, Teo QW, Graham CS, Brooke CB, Nair SK, Wu NC",
+                venue: "Nature Communications",
+                link: "https://www.nature.com/articles/s41467-022-34060-8",
+                doi: "10.1038/s41467-022-34060-8",
+                pubmed: "36307418"
+            },
+            {
+                year: 2022,
+                title: "Molecular analysis of a public cross-neutralizing antibody response to SARS-CoV-2",
+                authors: "Yuan M, Wang Y, Lv H, Tan TJC, Wilson IA, Wu NC",
+                venue: "Cell Reports",
+                link: "https://www.cell.com/cell-reports/fulltext/S2211-1247(22)01316-5",
+                doi: "10.1016/j.celrep.2022.111650",
+                pubmed: "36335937"
+            },
+            {
+                year: 2022,
+                title: "The evolutionary potential of influenza A virus hemagglutinin is highly constrained by epistatic interactions with neuraminidase",
+                authors: "Liu T, Wang Y, Tan TJC, Wu NC, Brooke CB",
+                venue: "Cell Host & Microbe",
+                link: "https://www.cell.com/cell-host-microbe/fulltext/S1931-3128(22)00403-3",
+                doi: "10.1016/j.chom.2022.09.003",
+                pubmed: "36150395"
+            },
+            {
+                year: 2022,
+                title: "Egg-adaptive mutations of human influenza H3N2 virus are contingent on natural evolution",
+                authors: "Liang W, Tan TJC, Wang Y, Lv H, Sun Y, Bruzzone R, Mok CKP, Wu NC",
+                venue: "PLoS Pathogens",
+                link: "https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1010875",
+                doi: "10.1371/journal.ppat.1010875",
+                pubmed: "36155668"
+            },
+            {
+                year: 2022,
+                title: "A large-scale systematic survey reveals recurring molecular features of public antibody responses to SARS-CoV-2",
+                authors: "Wang Y, Yuan M, Lv H, Peng J, Wilson IA, Wu NC",
+                venue: "Immunity",
+                link: "https://www.cell.com/immunity/fulltext/S1074-7613(22)00142-X",
+                doi: "10.1016/j.immuni.2022.03.019",
+                pubmed: "35397794"
+            },
+            {
+                year: 2021,
+                title: "Antigenic evolution of human influenza H3N2 neuraminidase is constrained by charge balancing",
+                authors: "Wang Y, Lei R, Nourmohammad A, Wu NC",
+                venue: "eLife",
+                link: "https://elifesciences.org/articles/72516",
+                doi: "10.7554/eLife.72516",
+                pubmed: "34878407"
+            },
+            {
+                year: 2021,
+                title: "A large-scale systematic survey of SARS-CoV-2 antibodies reveals recurring molecular features",
+                authors: "Wang Y, Yuan M, Peng J, Wilson IA, Wu NC",
+                venue: "bioRxiv",
+                link: "https://www.biorxiv.org/content/10.1101/2021.11.26.470157",
+                doi: "10.1101/2021.11.26.470157",
+                pubmed: "34873599"
+            },
+            {
+                year: 2021,
+                title: "Homologous and heterologous serological response to the N-terminal domain of SARS-CoV-2 in humans and mice",
+                authors: "Lv H, Tsang OT, So RTY, Wang Y, Yuan M, Liu H, Yip GK, Teo QW, Lin Y, Liang W, Wang J, Ng WW, Wilson IA, Peiris JSM, Wu NC, Mok CKP",
+                venue: "European Journal of Immunology",
+                link: "https://onlinelibrary.wiley.com/doi/10.1002/eji.202149234",
+                doi: "10.1002/eji.202149234",
+                pubmed: "34089541"
+            },
+            {
+                year: 2021,
+                title: "Sequence signatures of two public antibody clonotypes that bind SARS-CoV-2 receptor binding domain",
+                authors: "Tan TJC, Yuan M, Kuzelka K, Padron GC, Beal JR, Chen X, Wang Y, Rivera-Cardona J, Zhu X, Stadtmueller BM, Brooke CB, Wilson IA, Wu NC",
+                venue: "Nature Communications",
+                link: "https://www.nature.com/articles/s41467-021-24123-7",
+                doi: "10.1038/s41467-021-24123-7",
+                pubmed: "34155209"
+            },
+            {
+                year: 2021,
+                title: "Human airway cells prevent SARS-CoV-2 multibasic cleavage site cell culture adaptation",
+                authors: "Lamers MM, Mykytyn AZ, Breugem TI, Wang Y, Wu DC, Riesebosch S, van den Doel PB, Schipper D, Bestebroer T, Wu NC, Haagmans BL",
+                venue: "eLife",
+                link: "https://elifesciences.org/articles/66815",
+                doi: "10.7554/eLife.66815",
+                pubmed: "33835028"
+            },
+            {
+                year: 2020,
+                title: "Cross-reactive Antibody Response between SARS-CoV-2 and SARS-CoV Infections",
+                authors: "Lv H, Wu NC, Tsang OT, Yuan M, Perera RAPM, Leung WS, So RTY, Chan JMC, Yip GK, Chik TSH, Wang Y, Choi CYC, Lin Y, Ng WW, Zhao J, Poon LLM, Peiris JSM, Wilson IA, Mok CKP",
+                venue: "Cell Reports",
+                link: "https://www.cell.com/cell-reports/fulltext/S2211-1247(20)30648-4",
+                doi: "10.1016/j.celrep.2020.107725",
+                pubmed: "33500101"
+            },
+            {
+                year: 2020,
+                title: "Cross-reactive antibody response between SARS-CoV-2 and SARS-CoV infections",
+                authors: "Lv H, Wu NC, Tsang OT, Yuan M, Perera RAPM, Leung WS, So RTY, Chan JMC, Yip GK, Chik TSH, Wang Y, Choi CYC, Lin Y, Ng WW, Zhao J, Poon LLM, Peiris JSM, Wilson IA, Mok CKP",
+                venue: "bioRxiv",
+                link: "https://www.biorxiv.org/content/10.1101/2020.03.15.993097",
+                doi: "10.1101/2020.03.15.993097",
+                pubmed: "32511317"
+            }
+        ];
+
+        function renderPublications() {
+            const container = document.getElementById('publications-container');
+            
+            if (publications.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #6b7280; padding: 2rem;">No publications available yet.</p>';
+                return;
+            }
+
+            // Group publications by year
+            const groupedByYear = {};
+            publications.forEach(pub => {
+                if (!groupedByYear[pub.year]) {
+                    groupedByYear[pub.year] = [];
+                }
+                groupedByYear[pub.year].push(pub);
+            });
+
+            // Sort years in descending order
+            const years = Object.keys(groupedByYear).sort((a, b) => b - a);
+
+            let html = '';
+            years.forEach(year => {
+                html += `<div class="year-group">
+                    <h2 class="year-header">${year}</h2>
+                    <ul class="publications-list">`;
+                
+                groupedByYear[year].forEach(pub => {
+                    html += `<li class="publication-item">
+                        <h3 class="publication-title">
+                            ${pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer">${pub.title}</a>` : pub.title}
+                        </h3>
+                        <div class="publication-authors">${pub.authors}</div>
+                        <div class="publication-venue">${pub.venue}</div>
+                        <div class="publication-links">`;
+                    
+                    if (pub.link) {
+                        html += `<a href="${pub.link}" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i> Article
+                        </a>`;
+                    }
+                    if (pub.pdf) {
+                        html += `<a href="${pub.pdf}" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>`;
+                    }
+                    if (pub.doi) {
+                        html += `<a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-link"></i> DOI
+                        </a>`;
+                    }
+                    if (pub.pubmed) {
+                        html += `<a href="https://pubmed.ncbi.nlm.nih.gov/${pub.pubmed}/" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-book-medical"></i> PubMed
+                        </a>`;
+                    }
+                    
+                    html += `</div>
+                    </li>`;
+                });
+                
+                html += `</ul></div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Render publications on page load
+        document.addEventListener('DOMContentLoaded', renderPublications);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
