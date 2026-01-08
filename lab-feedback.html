@@ -166,6 +166,39 @@
             padding: 0 1rem;
             line-height: 1.6;
         }
+        .cl-toggle {
+            cursor: pointer;
+            color: #06b6d4;
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            transition: color 0.2s ease;
+            user-select: none;
+        }
+        .cl-toggle:hover {
+            color: #0891b2;
+        }
+        .cl-definition {
+            margin-top: 0.75rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-left: 3px solid #06b6d4;
+            border-radius: 6px;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: #374151;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         @media (max-width: 768px) {
             .detail-grid {
                 grid-template-columns: 1fr;
@@ -259,8 +292,11 @@
                     </li>
                     <li>
                         <i class="fas fa-cogs"></i>
-                        <div>
-                            <strong>Continuous Model Refinement:</strong> Systematic processes for updating models based on experimental validation and performance metrics.
+                        <div style="flex: 1;">
+                            <strong>Continuous Model Refinement:</strong> Systematic processes for updating models based on experimental validation and performance metrics through <span class="cl-toggle" onclick="toggleContinualLearning(this)">continual learning</span>.
+                            <div class="cl-definition" style="display: none;">
+                                Continual Learning (CL) in biological systems enables models to incrementally adapt to evolving data—such as new viral mutations or protein structures—without "forgetting" fundamental biophysical principles. By balancing plasticity (learning new patterns) with stability (retaining old knowledge), it allows models to stay current with dynamic biological changes. This approach avoids the prohibitive computational cost of retraining massive foundation models from scratch for every new discovery.
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -345,5 +381,17 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function toggleContinualLearning(element) {
+            const definition = element.nextElementSibling;
+            const isExpanded = definition.style.display !== 'none';
+            
+            if (isExpanded) {
+                definition.style.display = 'none';
+            } else {
+                definition.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
