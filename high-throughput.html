@@ -105,7 +105,7 @@
             position: sticky;
             top: 100px;
         }
-        .sidebar-section h3 {
+        .sidebar-section h2 {
             color: #111827;
             margin-bottom: 1rem;
             font-size: 1.25rem;
@@ -225,13 +225,14 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Wang Lab</h2>
+                <div class="logo-text">Wang Lab</div>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
                     <a href="index.html#home" class="nav-link">Home</a>
                 </li>
@@ -248,21 +249,23 @@
                     <a href="index.html#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
         </div>
     </nav>
+
+    <main id="main-content" tabindex="-1">
 
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="breadcrumb-content">
             <a href="index.html">Home</a>
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
             <a href="index.html#research">Research</a>
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
             <span>High-Throughput Methods</span>
         </div>
     </div>
@@ -271,7 +274,7 @@
     <div class="detail-hero">
         <div class="detail-content">
             <a href="index.html#research" class="back-button">
-                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
                 Back to Research
             </a>
             <h1>High-Throughput Methods & Robotic Automation</h1>
@@ -283,42 +286,42 @@
     <div class="detail-content">
         <div class="detail-grid">
             <div class="detail-main">
-                <h3>Overview of high-throughput methods and robotic automation </h3>
+                <h2>Overview of high-throughput methods and robotic automation </h2>
                 <!-- Overview Image -->
                 <figure class="ht-figure">
                     <img src="images/high-throughput-overview.jpg" alt="High-Throughput Methods Overview">
                     <figcaption>Overview of high-throughput methods and robotic automation platforms for antibody-antigen interaction studies</figcaption>
                 </figure>
 
-                <h3>Core Technologies</h3>
+                <h2>Core Technologies</h2>
                 <ul class="feature-list">
                     <li>
-                        <i class="fas fa-seedling"></i>
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
                         <div>
                             <strong>Yeast Display Systems:</strong> Eukaryotic display platform for screening protein-protein interactions and antibody-antigen binding with high throughput.
                         </div>
                     </li>
                     <li>
-                        <i class="fas fa-dna"></i>
+                        <i class="fas fa-dna" aria-hidden="true"></i>
                         <div>
                             <strong>mRNA Display Technology:</strong> In vitro display system that links genotype to phenotype, enabling rapid screening of protein libraries with millions of variants.
                         </div>
                     </li>
                     <li>
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
                         <div>
                             <strong>Deep Mutational Scanning (DMS):</strong> Comprehensive analysis of protein function by systematically testing thousands of mutations in parallel.
                         </div>
                     </li>
                     <li>
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-robot" aria-hidden="true"></i>
                         <div>
                             <strong>Automated Laboratory Workflows:</strong> Robotic systems that handle sample preparation, screening, and data collection with minimal human intervention.
                         </div>
                     </li>
                 </ul>
 
-                <h3>Applications in Virus and Antibody Research</h3>
+                <h2>Applications in Virus and Antibody Research</h2>
                 <p>
                     These high-throughput methods are powerful for studying virus-immune 
                     system interactions. We can screen thousands of antibody variants against viral 
@@ -329,7 +332,7 @@
 
             <div class="detail-sidebar">
                 <div class="sidebar-section">
-                    <h3>Related Research</h3>
+                    <h2>Related Research</h2>
                     <ul>
                         <li><a href="ai-science.html">AI Agents</a></li>
                         <li><a href="lab-feedback.html">Lab-Feedback AI Modeling</a></li>
@@ -337,7 +340,7 @@
                 </div>
 
                 <div class="sidebar-section">
-                    <h3>Equipment & Platforms</h3>
+                    <h2>Equipment & Platforms</h2>
                     <ul>
                         <li>Flow Cytometry Sorters</li>
                         <li>Liquid Handling Robots</li>
@@ -346,14 +349,14 @@
                 </div>
 
                 <div class="sidebar-section">
-                    <h3>Key Publications</h3>
+                    <h2>Key Publications</h2>
                     <ul>
                         <li>Coming Soon...</li>
                     </ul>
                 </div>
 
                 <div class="sidebar-section">
-                    <h3>Throughput Capacity</h3>
+                    <h2>Throughput Capacity</h2>
                     <ul>
                         <li>10^6 variants per day</li>
                         <li>96-well plate processing</li>
@@ -366,6 +369,8 @@
     </div>
 
     <!-- Footer -->
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -386,9 +391,9 @@
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <div class="social-links">
-                        <a href="https://github.com/Wang-Lab-UF" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/Yiquan_W" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/yiquan-w/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Wang-Lab-UF" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://x.com/Yiquan_W" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/yiquan-w/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>

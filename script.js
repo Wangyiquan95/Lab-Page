@@ -2,15 +2,20 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
+function setMenuOpen(open) {
+    hamburger.classList.toggle('active', open);
+    navMenu.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+}
+
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    setMenuOpen(!navMenu.classList.contains('active'));
 });
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    setMenuOpen(false);
 }));
 
 // Simple smooth scrolling function (global)
@@ -43,8 +48,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         // Close mobile menu if open
         if (hamburger && navMenu) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            setMenuOpen(false);
         }
         
         // Scroll to target
@@ -223,10 +227,10 @@ document.querySelectorAll('.stat').forEach(stat => {
 
 // Add keyboard navigation support
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        // Close mobile menu on escape
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        // Close mobile menu on escape and restore focus to the toggle
+        setMenuOpen(false);
+        hamburger.focus();
     }
 });
 
@@ -275,18 +279,8 @@ function navigateToPage(pageName) {
 
 // Add click tracking for research direction navigation
 document.querySelectorAll('.research-card, .ai-category').forEach(card => {
-    card.addEventListener('click', (e) => {
-        // Prevent default link behavior if it's a card click
-        if (e.target.closest('.learn-more')) {
-            return; // Let the link handle the navigation
-        }
-        
-        const link = card.querySelector('.learn-more');
-        if (link) {
-            e.preventDefault();
-            trackClick(card, 'research_direction_click');
-            navigateToPage(link.getAttribute('href'));
-        }
+    card.addEventListener('click', () => {
+        trackClick(card, 'research_direction_click');
     });
 });
 

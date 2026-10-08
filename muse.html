@@ -86,7 +86,7 @@
             position: sticky;
             top: 100px;
         }
-        .sidebar-section h3 {
+        .sidebar-section h2 {
             color: #111827;
             margin-bottom: 1rem;
             font-size: 1.25rem;
@@ -145,7 +145,7 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             border-color: #4a90e2;
         }
-        .model-card h4 {
+        .model-card h3 {
             color: #111827;
             margin-bottom: 1rem;
             font-size: 1.25rem;
@@ -199,13 +199,14 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Wang Lab</h2>
+                <div class="logo-text">Wang Lab</div>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
                     <a href="index.html#home" class="nav-link">Home</a>
                 </li>
@@ -225,21 +226,23 @@
                     <a href="index.html#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
         </div>
     </nav>
+
+    <main id="main-content" tabindex="-1">
 
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="breadcrumb-content">
             <a href="index.html">Home</a>
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
             <a href="index.html#research">Research</a>
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
             <span>About MUSE</span>
         </div>
     </div>
@@ -248,7 +251,7 @@
     <div class="detail-hero">
         <div class="detail-content">
             <a href="index.html#research" class="back-button">
-                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
                 Back to Research
             </a>
             <h1>About MUSE</h1>
@@ -260,7 +263,7 @@
     <div class="detail-content">
         <div class="detail-grid">
             <div class="detail-main">
-                <h3>Overview of the MUSE program</h3>
+                <h2>Overview of the MUSE program</h2>
                 <figure class="muse-figure">
                     <img src="images/Muse_overview.jpg" alt="MUSE Overview">
                     <figcaption>Overview of the MUSE (Mechanistic Understanding of Sequence Evolution) program and its model series</figcaption>
@@ -271,35 +274,35 @@
                     The <strong>MUSE program</strong> (Mechanistic Understanding of Sequence Evolution) is a family of foundation models designed to uncover the biological rules governing sequence evolution across RNA, protein, and multi-component molecular systems. Unlike traditional predictive models that focus solely on outcomes, MUSE models are explicitly trained to reveal why certain mutations or sequence changes are tolerated, deleterious, or compensable, providing mechanistic insight into molecular constraints.
                 </p>
 
-                <h3>The MUSE Model Series</h3>
+                <h2>The MUSE Model Series</h2>
                 <p>
                     The MUSE program includes four core models, each designed to capture different aspects of molecular evolution:
                 </p>
 
                 <div class="model-cards">
                     <div class="model-card">
-                        <h4><i class="fas fa-dna"></i> MuseRNA</h4>
+                        <h3><i class="fas fa-dna" aria-hidden="true"></i> MuseRNA</h3>
                         <p>
                             Learns RNA structural and interaction constraints to explain how mutations impact folding, stability, and functional interactions.
                         </p>
                     </div>
 
                     <div class="model-card">
-                        <h4><i class="fas fa-project-diagram"></i> MuseFold</h4>
+                        <h3><i class="fas fa-project-diagram" aria-hidden="true"></i> MuseFold</h3>
                         <p>
                             Captures protein folding, stability, and epistatic effects to elucidate structure-function principles.
                         </p>
                     </div>
 
                     <div class="model-card">
-                        <h4><i class="fas fa-puzzle-piece"></i> MuseAssemble</h4>
+                        <h3><i class="fas fa-puzzle-piece" aria-hidden="true"></i> MuseAssemble</h3>
                         <p>
                             Models the rules governing multi-component assembly, including viral genome packaging and oligomer formation.
                         </p>
                     </div>
 
                     <div class="model-card">
-                        <h4><i class="fas fa-handshake"></i> MuseBind</h4>
+                        <h3><i class="fas fa-handshake" aria-hidden="true"></i> MuseBind</h3>
                         <p>
                             Learns binding interface constraints to explain molecular recognition and interaction specificity.
                         </p>
@@ -310,7 +313,7 @@
             <div class="detail-sidebar">
 
                 <div class="sidebar-section">
-                    <h3>Related Research</h3>
+                    <h2>Related Research</h2>
                     <ul>
                         <li><a href="lab-feedback.html">Lab-Feedback AI Modeling</a></li>
                         <li><a href="ai-science.html">AI Agents</a></li>
@@ -319,7 +322,7 @@
                 </div>
 
                 <div class="sidebar-section">
-                    <h3>Applications</h3>
+                    <h2>Applications</h2>
                     <ul>
                         <li>Viral Evolution Prediction</li>
                         <li>Antibody Design</li>
@@ -329,7 +332,7 @@
                 </div>
 
                 <div class="sidebar-section">
-                    <h3>Key Publications</h3>
+                    <h2>Key Publications</h2>
                     <ul>
                         <li>Coming Soon...</li>
                     </ul>
@@ -339,6 +342,8 @@
     </div>
 
     <!-- Footer -->
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -360,9 +365,9 @@
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <div class="social-links">
-                        <a href="https://github.com/Wang-Lab-UF" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/Yiquan_W" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/yiquan-w/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Wang-Lab-UF" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://x.com/Yiquan_W" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/yiquan-w/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>

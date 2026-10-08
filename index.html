@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Wang Lab</h2>
+                <div class="logo-text">Wang Lab</div>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
@@ -35,13 +36,15 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
         </div>
     </nav>
+
+    <main id="main-content" tabindex="-1">
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -125,28 +128,28 @@
             
             <div class="research-grid" style="margin-top: 3rem;">
                 <!-- High-throughput Methods -->
-                <div class="research-card" onclick="navigateToPage('high-throughput.html')">
+                <a class="research-card" href="high-throughput.html">
                     <h3 class="research-title">High-Throughput Automation</h3>
                     <div class="research-image">
                         <img src="images/p1.jpg" alt="High-Throughput Methods & Robotic Automation">
                     </div>
-                </div>
+                </a>
 
                 <!-- Lab-Feedback AI modeling -->
-                <div class="research-card" onclick="navigateToPage('lab-feedback.html')">
+                <a class="research-card" href="lab-feedback.html">
                     <h3 class="research-title">Lab-Feedback AI Modeling</h3>
                     <div class="research-image">
                         <img src="images/p2.jpg" alt="Lab-Feedback AI Modeling">
                     </div>
-                </div>
+                </a>
 
                 <!-- AI Agents -->
-                <div class="research-card" onclick="navigateToPage('ai-science.html')">
+                <a class="research-card" href="ai-science.html">
                     <h3 class="research-title">AI Agents</h3>
                     <div class="research-image">
                         <img src="images/p3.jpg" alt="AI Agents">
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -264,21 +267,21 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
                             <h3>Email</h3>
                             <p>wang.yiquan@ufl.edu</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
                             <h3>Location</h3>
                             <p>Veterinary Medicine Academic Building<br>1945 SW 16th Ave Suite V3-147, Gainesville, FL</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fab fa-github"></i>
+                        <i class="fab fa-github" aria-hidden="true"></i>
                         <div>
                             <h3>GitHub</h3>
                             <p>https://github.com/Wang-Lab-UF</p>
@@ -290,6 +293,8 @@
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -310,9 +315,9 @@
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <div class="social-links">
-                        <a href="https://github.com/Wang-Lab-UF" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/Yiquan_W" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/yiquan-w/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Wang-Lab-UF" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://x.com/Yiquan_W" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/yiquan-w/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>

@@ -42,7 +42,7 @@ body {
     height: 70px;
 }
 
-.nav-logo h2 {
+.nav-logo .logo-text {
     color: #2d3748;
     font-weight: 700;
     font-size: 1.5rem;
@@ -85,6 +85,10 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
 }
 
 .bar {
@@ -562,6 +566,8 @@ body {
 
 .research-card {
     background: #ffffff;
+    text-decoration: none;
+    color: inherit;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1356,4 +1362,43 @@ body { scroll-padding-top: var(--nav-offset); }
 
 .research-card:nth-child(3) {
     animation-delay: 0.4s;
+}
+
+
+/* Skip link: visible only once focused */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 1100;
+    padding: 0.75rem 1.25rem;
+    background: #111827;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 0 0 6px 0;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+/* Clear focus indicator on the site's own palette */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Respect a reduced-motion preference (WCAG 2.2.2 / 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
